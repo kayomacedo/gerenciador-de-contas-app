@@ -18,12 +18,12 @@ export function CustonModal({isVisible,close,save}) {
         setSenha('');
     
         // Feche o modal
-        close();
+        //close();
       };
   return (
     <View>
       
-    <StatusBar backgroundColor={'#121214'} barStyle="ligth-content" />
+   <StatusBar backgroundColor={'#121214'} barStyle="ligth-content"/>
     <Modal
       transparent={true}
       animationType="slide"

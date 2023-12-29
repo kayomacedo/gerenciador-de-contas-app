@@ -3,21 +3,23 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from "react-nati
 import { Ionicons } from "@expo/vector-icons";
 
 
-const EmailCard = ({ email, senha, title}) => {
+const EmailCard = ({ email, senha, title, deleteConta,chave,copy, senhaVisivel}) => {
 
     const [screenWidth, setScreenWidth] = useState(Dimensions.get('window').width);
     return (
     <View style={[styles.boxItem,{width:screenWidth/1.04}]}>
       <View style={styles.bts}>
-        <TouchableOpacity onPress={()=>{}}>
-          <Ionicons style={{ color: 'green'}} name="copy-outline" size={30} />
+        <TouchableOpacity onPress={()=>{copy(email)}}>
+          <Ionicons style={{ color: '#00875f'}} name="copy-outline" size={30} />
         </TouchableOpacity>
         <Text style={{color:'white',fontWeight:'bold'}}>{title}</Text>
-        <TouchableOpacity onPress={()=>{}}>
-          <Ionicons style={{ color:'red' }} name="trash-outline" size={30} />
+        <TouchableOpacity onPress={()=>{deleteConta(chave)}}>
+          <Ionicons style={{ color:'#aa2834' }} name="trash-outline" size={30} />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.emailSenhaCard} onPress={senhaVisivel}>
+      <TouchableOpacity style={styles.emailSenhaCard} onPress={()=>{
+        senhaVisivel(chave)
+      }}>
         <Text style={[styles.email]}>Email: {email}</Text>
 
         <View style={styles.boxSenha}>
