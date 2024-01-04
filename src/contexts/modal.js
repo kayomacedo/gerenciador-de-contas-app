@@ -1,74 +1,77 @@
 import React, { createContext, useEffect, useState } from "react";
-export const ModalContext = createContext({});
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+export const ModalContext = createContext({});
 
 function ModalProvider({ children }) {
   const [isVisible, setIsVisible] = useState(false);
   const [minhasContas, setMinhasContas] = useState([]);
-
   const chave = "@MydataThemes:dataThemes";
 
-
   const getContas = async () => {
-    
     try {
       const value = await AsyncStorage.getItem(chave);
-      if(!value){
-        setMinhasContas(JSON.parse([]));  
+      if (!value) {
+        setMinhasContas([]);
+      } else {
+        setMinhasContas(JSON.parse(value));
       }
-      setMinhasContas(JSON.parse(value));
     } catch (e) {
-      // saving error
+      // lidar com o erro
     }
-    return [];
   };
 
   useEffect(() => {
     getContas();
   }, []);
 
-
-  const salvarNovaConta = async (titulo,email,senha) => {
+  const salvarNovaConta = async (titulo, email, senha) => {
     try {
-      const value = await AsyncStorage.getItem(chave);
-      if (value == null) {
-        AsyncStorage.setItem(chave, JSON.stringify([]));
+      let convertida = await AsyncStorage.getItem(chave);
+      if (convertida === null) {
+        convertida = [];
+      } else {
+        convertida = JSON.parse(convertida);
       }
-      const convertida = JSON.parse([value]);
 
-      // Nova
-      if (email != "" && email != "" && senha != "") {
+      if (email !== "" && senha !== "") {
         const newConta = {
           email: email,
           senha: senha,
           titulo: titulo,
-          senhaVisivel:false
+          senhaVisivel: false,
         };
         convertida.push(newConta);
 
         AsyncStorage.setItem(chave, JSON.stringify(convertida));
         setMinhasContas(convertida);
       }
-    } catch (e) {}
+    } catch (e) {
+      // lidar com o erro
+    }
   };
 
-  const apagarConta = async (index) =>{
-    const value = await AsyncStorage.getItem(chave);
-    const convertida = JSON.parse([value]);
+  const apagarConta = async (index) => {
+    try {
+      const value = await AsyncStorage.getItem(chave);
+      let convertida = JSON.parse(value) || [];
+
       // Verificar se o índice é válido
       if (index >= 0 && index < convertida.length) {
         // Remover o objeto no índice específico
         convertida.splice(index, 1);
-        
+        AsyncStorage.setItem(chave, JSON.stringify(convertida));
+        setMinhasContas(convertida);
+      }
+    } catch (e) {
+      // lidar com o erro
     }
-    AsyncStorage.setItem(chave, JSON.stringify(convertida));
-    setMinhasContas(convertida);
-
-  } 
-
+  };
 
   return (
-    <ModalContext.Provider value={{ isVisible, minhasContas, salvarNovaConta,apagarConta }}>
+    <ModalContext.Provider
+      value={{ isVisible, minhasContas, salvarNovaConta, apagarConta }}
+    >
       {children}
     </ModalContext.Provider>
   );
