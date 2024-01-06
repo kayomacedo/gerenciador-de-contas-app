@@ -7,14 +7,10 @@ Aplicativo que facilita gerenciamento de contas de maneira local, rapido, bonito
 ### Tecnologias
 React-Native
 libs;
--Styled-Component;
--Context-Api;
--Async-Storage;
--Lottie;
-* Você instalou a versão mais recente do `Windows 10 / Windows 11`;
-* Você instalou o `Node.js`;
-* Você instalou o `Expo` no seu desktop;
-* Você instalou o aplicativo `Expo Go` no seu celular.
+*Styled-component;
+* Context-api;
+* Async-Storage;
+* Lottie.
 
 
 ### Funcionalidades
