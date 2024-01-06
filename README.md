@@ -9,6 +9,7 @@ Aplicativo que facilita gerenciamento de contas de maneira local, rapido, bonito
 
 <img src="https://s13.gifyu.com/images/SjPBy.gif" alt="Home App" width="300"/>
 
+aaa
 <img src="https://s13.gifyu.com/images/SjPy2.gif" alt="Splash App" width="300"/>
 
 
