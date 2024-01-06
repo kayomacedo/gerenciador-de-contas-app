@@ -6,11 +6,11 @@ Aplicativo que facilita gerenciamento de contas de maneira local, rapido, bonito
 
 ### Tecnologias
 React-Native
-libs
-*Styled-Component
-*Context-Api
-*Async-Storage
-*Lottie
+libs;
+-Styled-Component;
+-Context-Api;
+-Async-Storage;
+-Lottie;
 
 ### Funcionalidades
 
