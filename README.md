@@ -7,10 +7,11 @@ Aplicativo que facilita gerenciamento de contas de maneira local, rapido, bonito
 [Baixe o apk](https://dc723.4shared.com/download/C2P3-jQufa/gerenciador-app.apk?tsid=20240106-072454-b200d422&sbsr=710b8adbc250fd73eab02537c0896755b02&bip=MTc5LjE5MS4yMTUuMTA5&lgfp=30)
 
 
-<div align="center">
+<div align="center" gap:12>
   <img src="https://s13.gifyu.com/images/SjPBy.gif" alt="Home App" width="300"/>
-  <img src="https://s13.gifyu.com/images/SjPGG.gif" alt="Home App" width="300"/>
  
+  <img src="https://s13.gifyu.com/images/SjPJw.gif" alt="Home App" width="300"/>
+  
 </div>
 
 
