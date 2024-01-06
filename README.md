@@ -5,7 +5,7 @@ Aplicativo que facilita gerenciamento de contas de maneira local, rapido, bonito
 
 
 ### Tecnologias
-* React-Native Expo.
+* `React-Native Expo`.
 * Context-api.
 * Async-Storage.
 * Lottie.
