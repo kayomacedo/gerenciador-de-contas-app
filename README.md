@@ -16,9 +16,9 @@ libs
 
 O projeto concluído:
 
-- [ ] Modo Noturno
-- [ ] Possibilidade criar, copiar e apagar conta do banco de dados local.
-- [ ] Persistencia de dados
+- [x] Modo Noturno
+- [x] Possibilidade criar, copiar e apagar conta do banco de dados local.
+- [x] Persistencia de dados
 
 ## 📑 Pré-requisitos
 
