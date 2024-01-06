@@ -13,7 +13,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import { MyThemeContext } from "../../contexts/theme";
 
-import { showToastInsert } from "../../components/toastMessagens";
 
 export function CustonModal({ isVisible, close, save }) {
   const [email, setEmail] = useState("");
@@ -24,17 +23,13 @@ export function CustonModal({ isVisible, close, save }) {
   const { themeAtual } = useContext(MyThemeContext);
 
   const handleSave = () => {
-    // Chame a função save passando os valores do título, email e senha
     save(titulo, email, senha);
 
-    // Limpe os campos após salvar
     setTitulo("");
     setEmail("");
     setSenha("");
 
-    // Feche o modal
-    //close();
-    showToastInsert();
+
   };
   return (
     <View>

@@ -1,5 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { showToastInsert } from "../components/toastMessagens";
+import { encriptText } from "../encript";
 
 export const ModalContext = createContext({});
 
@@ -35,16 +37,23 @@ function ModalProvider({ children }) {
       }
 
       if (email !== "" && senha !== "") {
+
+        const emailCript = encriptText('salt', email)
+        const senhaCript = encriptText('salt', senha)
+        const tituloCript = encriptText('salt', titulo); //
+        
+        
         const newConta = {
-          email: email,
-          senha: senha,
-          titulo: titulo,
+          email: emailCript,
+          senha: senhaCript,
+          titulo: tituloCript,
           senhaVisivel: false,
         };
         convertida.push(newConta);
 
         AsyncStorage.setItem(chave, JSON.stringify(convertida));
         setMinhasContas(convertida);
+        showToastInsert();
       }
     } catch (e) {
       // lidar com o erro

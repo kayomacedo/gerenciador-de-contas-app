@@ -17,20 +17,29 @@ import LottieView from "lottie-react-native";
 import { useTheme } from "styled-components";
 import { MyThemeContext } from "../contexts/theme";
 import * as Animatable from "react-native-animatable";
+import { decryptText, encriptText } from "../encript";
+
+
+
+
 
 export default function Home() {
   const { minhasContas, salvarNovaConta, apagarConta } =
-    useContext(ModalContext);
+  useContext(ModalContext);
   const [isVisible, setIsVisible] = useState(false);
   const [minhasContasemMemoria, setMinhasContasemMemoria] = useState([]);
   const { colors } = useTheme();
 
   const { themeAtual } = useContext(MyThemeContext);
 
+ 
+
+
   useEffect(() => {
     setMinhasContasemMemoria(minhasContas);
   }, [minhasContas]); // Certifique-se de incluir o valor como dependência
 
+  
   //alert(minhasContas)
   const abrirModal = () => {
     setIsVisible(!isVisible);
@@ -63,7 +72,7 @@ export default function Home() {
       return newState;
     });
   }
-
+  
   return (
     <SafeAreaView
       style={[
@@ -105,9 +114,9 @@ export default function Home() {
               minhasContasemMemoria.map((data, index) => (
                 <EmailCard
                   key={index}
-                  email={data.email}
-                  senha={data.senhaVisivel ? data.senha : "***"}
-                  title={data.titulo}
+                  email={decryptText('salt',data.email)}
+                  senha={data.senhaVisivel ? decryptText('salt',data.senha) : "***"}
+                  title={decryptText('salt',data.titulo)}
                   chave={index}
                   deleteConta={deletarConta}
                   copy={copiarEmail}
