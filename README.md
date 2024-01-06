@@ -8,7 +8,7 @@ Aplicativo que facilita gerenciamento de contas de maneira local, rapido, bonito
 
 ![Home do app]([url_do_seu_gif](https://s13.gifyu.com/images/SjPBy.gif))
 
-
+https://s13.gifyu.com/images/SjPBy.gif
 ### Tecnologias
 * `React-Native Expo`.
 * Context-api.
