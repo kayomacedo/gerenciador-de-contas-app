@@ -37,6 +37,7 @@ O projeto concluído:
 - [x] Modo Noturno
 - [x] Possibilidade criar, copiar e apagar conta do banco de dados local.
 - [x] Persistencia de dados
+- [x] Senha oculta e senha visivel 
 
 ## 📑 Pré-requisitos
 
@@ -81,6 +82,7 @@ expo start
 * Adicionar conta : clique no icone '+' e logo após preencher todos os campos clique no icone '➜' .
 * Apagar conta: (Caso haja conta registrada ) Clique o icone 🗑 do lado edireito do card.
 * Copiar Email: (Caso haja conta registrada ) Clique o icone esquerdo  do card e o email será copiado, basta colar para usa-lo.
+* Senha Visivel: (Caso haja conta registrada ) Basta clicar no card para tornar a senha visivel ou oculta.
 
 ## 🤳 Como me achar
 
