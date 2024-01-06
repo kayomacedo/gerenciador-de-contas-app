@@ -5,8 +5,8 @@ Aplicativo que facilita gerenciamento de contas de maneira local, rapido, bonito
 
 
 ### Tecnologias
-React-Native
-libs
+##React-Native
+- libs
 
 * Context-api.
 * Async-Storage.
