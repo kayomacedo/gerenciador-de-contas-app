@@ -17,7 +17,7 @@ import LottieView from "lottie-react-native";
 import { useTheme } from "styled-components";
 import { MyThemeContext } from "../contexts/theme";
 import * as Animatable from "react-native-animatable";
-import { decryptText, encriptText } from "../encript";
+import { decryptText } from "../encript";
 
 
 
