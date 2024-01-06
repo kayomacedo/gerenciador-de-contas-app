@@ -9,6 +9,8 @@ Aplicativo que facilita gerenciamento de contas de maneira local, rapido, bonito
 
 <div align="center">
   <img src="https://s13.gifyu.com/images/SjPBy.gif" alt="Home App" width="300"/>
+  <img src="https://s13.gifyu.com/images/SjPGG.gif" alt="Home App" width="300"/>
+ 
 </div>
 
 
